@@ -1,18 +1,30 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms';
 
+const isProduction = process.env.NODE_ENV === 'production';
+
 /** @type {import('tailwindcss').Config} */
 export default {
     content: [
-        './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
-        './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
+        './resources/js/**/*.js',
+        './resources/css/**/*.css',
     ],
-
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                montserrat: ['Montserrat', 'sans-serif'],
+            },
+            fontWeight: {
+                normal: 400,
+                semibold: 600,
+                bold: 700,
+            },
+            colors: {
+                primary: '#004225',
+                secondary: '#C0C0C0',
+                accent: '#FF8700',
+                'dark-primary': '#1C1C1C',
             },
         },
     },

@@ -64,3 +64,12 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Colors
+
+Color Scheme Example
+Primary Color: British Racing Green (#004225)
+Secondary Color: Metallic Silver (#C0C0C0)
+Accent Color: Bright Yellow (#FFD700)
+Background Color: Dark Charcoal (#1C1C1C)
+Text Color: White (#FFFFFF)
