@@ -22,6 +22,27 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/admin', function () {
+    return view('admin.index');
+})->middleware(['auth', 'verified'])->name('admin');
+Route::get('/user', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('user');
+Route::get('/vehicle', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('vehicle');
+Route::get('/news', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('news');
+Route::get('/article', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('article');
+Route::get('/blog', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('blog');
+Route::get('/gallery', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('gallery');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

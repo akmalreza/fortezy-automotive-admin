@@ -31,54 +31,23 @@ var white_sidenav_icons = ["bg-gray-200"];
 
 var sidenav_highlight = document.querySelector("a[href=" + CSS.escape(sidenav_target) + "]");
 
-// fixed plugin toggle
-if (pageName != "rtl") {
-  fixedPluginButton.addEventListener("click", function () {
-    fixedPluginCard.classList.toggle("-right-90");
-    fixedPluginCard.classList.toggle("right-0");
-  });
+fixedPluginButtonNav.addEventListener("click", function () {
+  fixedPluginCard.classList.toggle("-right-90");
+  fixedPluginCard.classList.toggle("right-0");
+});
 
-  fixedPluginButtonNav.addEventListener("click", function () {
-    fixedPluginCard.classList.toggle("-right-90");
-    fixedPluginCard.classList.toggle("right-0");
-  });
+fixedPluginCloseButton.addEventListener("click", function () {
+  fixedPluginCard.classList.toggle("-right-90");
+  fixedPluginCard.classList.toggle("right-0");
+});
 
-  fixedPluginCloseButton.addEventListener("click", function () {
-    fixedPluginCard.classList.toggle("-right-90");
-    fixedPluginCard.classList.toggle("right-0");
-  });
-
-  window.addEventListener("click", function (e) {
-    if (!fixedPlugin.contains(e.target) && !fixedPluginButton.contains(e.target) && !fixedPluginButtonNav.contains(e.target)) {
-      if (fixedPluginCard.classList.contains("right-0")) {
-        fixedPluginCloseButton.click();
-      }
+window.addEventListener("click", function (e) {
+  if (!fixedPlugin.contains(e.target) && !fixedPluginButtonNav.contains(e.target)) {
+    if (fixedPluginCard.classList.contains("right-0")) {
+      fixedPluginCloseButton.click();
     }
-  });
-} else {
-  fixedPluginButton.addEventListener("click", function () {
-    fixedPluginCard.classList.toggle("-left-90");
-    fixedPluginCard.classList.toggle("left-0");
-  });
-
-  fixedPluginButtonNav.addEventListener("click", function () {
-    fixedPluginCard.classList.toggle("-left-90");
-    fixedPluginCard.classList.toggle("left-0");
-  });
-
-  fixedPluginCloseButton.addEventListener("click", function () {
-    fixedPluginCard.classList.toggle("-left-90");
-    fixedPluginCard.classList.toggle("left-0");
-  });
-
-  window.addEventListener("click", function (e) {
-    if (!fixedPlugin.contains(e.target) && !fixedPluginButton.contains(e.target) && !fixedPluginButtonNav.contains(e.target)) {
-      if (fixedPluginCard.classList.contains("left-0")) {
-        fixedPluginCloseButton.click();
-      }
-    }
-  });
-}
+  }
+});
 
 // color sidenav
 
