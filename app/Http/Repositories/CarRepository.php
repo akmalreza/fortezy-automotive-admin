@@ -2,9 +2,9 @@
 
 namespace App\Http\Repositories;
 
-// use App\Models\Vehicle as MainModel;
+use App\Models\Car as MainModel;
 
-class VehicleRepository {
+class CarRepository {
     public function __construct() {
         //
     }
