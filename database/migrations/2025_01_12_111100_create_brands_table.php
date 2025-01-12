@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('admin_roles', function (Blueprint $table) {
+        Schema::create('brands', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('name')->nullable(false);
-            $table->softDeletes();
+            $table->text('description')->nullable(false);
+            $table->string('country')->nullable(false);
+            $table->string('logo')->nullable(true);
             $table->timestamps();
         });
     }
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('admin_roles');
+        Schema::dropIfExists('brands');
     }
 };

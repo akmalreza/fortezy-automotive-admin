@@ -11,15 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('vehicles', function (Blueprint $table) {
+        Schema::create('cars', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->uuid('brand_id')->nullable(false);
             $table->string('model')->nullable(false);
             $table->string('type')->nullable(false);
             $table->double('cylinder_volume')->nullable(true);
             $table->string('transmission_type')->nullable(true);
-            $table->string('manufacturer_country')->nullable(true);
-            $table->string('abs')->nullable(true);
+            $table->boolean('antilock_braking_system')->nullable(true);
             $table->string('fuel_type')->nullable(true);
             $table->string('max_speed')->nullable(true);
             $table->string('horse_power')->nullable(true);
