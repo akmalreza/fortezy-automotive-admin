@@ -5,6 +5,6 @@ const mix = require('laravel-mix');
   //   require('autoprefixer'),
   // ])
   // .js('resources/js/app.js', 'public/js')
-  mix.ts('resources/js/admin/datatable.tsx', 'public/js/admin/datatable.js')
+  mix.ts('resources/js/admin/index.tsx', 'public/js/admin/datatable.js')
    .react()
   .sourceMaps();

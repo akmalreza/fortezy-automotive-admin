@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CarController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VehicleController;
 use Illuminate\Support\Facades\Route;
@@ -28,9 +29,6 @@ Route::get('/admin', function () {
 Route::get('/user', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('user');
-Route::get('/vehicle', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('vehicle');
 Route::get('/news', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('news');
@@ -50,9 +48,15 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('test', function () {
-    return view('example-table');
-});
+Route::prefix('/cars')
+    ->controller(CarController::class)
+    ->group(function () {
+        Route::get('/', function () {
+            return view('cars/index', [
+                'title'=> 'Cars'
+            ]);
+        });
+    });
 
 Route::prefix('/car-and-bike-specs')
     ->controller(VehicleController::class)
